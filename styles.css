@@ -825,7 +825,12 @@ img, svg {
   color: var(--text-purple-dark);
 }
 
-.mobile-icon { font-size: 1.2rem; }
+.mobile-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
 .mobile-title { font-size: 0.75rem; font-weight: 800; display: block; }
 .mobile-sub { font-size: 0.68rem; color: var(--accent-mint-hover); font-weight: 700; }
 
@@ -1602,7 +1607,7 @@ img, svg {
   border-color: var(--accent-coral);
 }
 
-.v-node-icon { font-size: 0.8rem; }
+.v-node-icon { font-size: 0.8rem; display: flex; align-items: center; justify-content: center; }
 .v-node-text { font-size: 0.6rem; font-weight: 700; }
 .v-flow-arrow { font-size: 0.75rem; color: var(--text-purple-muted); }
 
@@ -2711,6 +2716,10 @@ img, svg {
 }
 
 .toast-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
   color: var(--accent-mint-hover);
   font-weight: 800;
 }
@@ -2907,6 +2916,11 @@ img, svg {
     display: none !important;
   }
 
+  /* Hide service decorative line-art doodles to prevent card overflow */
+  .service-doodle-decor {
+    display: none;
+  }
+
   .hero-section {
     padding-top: calc(var(--header-height) + 1rem);
     padding-bottom: 2.5rem;
@@ -2992,6 +3006,68 @@ img, svg {
 
 /* Small Mobile Phones (< 576px down to 320px) */
 @media (max-width: 576px) {
+  /* Capability switcher header: wrap on very small screens */
+  .capability-switcher-header {
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  /* Contact panel: tighter padding on small phones */
+  .contact-theatrical-panel {
+    padding: 1.75rem 1rem;
+  }
+
+  /* Channel pills: prevent long email/phone text from overflowing pill */
+  .channel-pill {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .channel-pill span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
+  }
+
+  /* Capability container and grids: prevent 320px overflow */
+  .hero-capability-container,
+  .cap-panel-grid,
+  .cap-tags,
+  .p-tags-row,
+  .role-stack-pills {
+    min-width: 0;
+  }
+
+  /* Address bar: tighter clamp at very small widths */
+  .browser-address-bar {
+    max-width: 130px;
+  }
+
+  /* Ensure form controls are full-width and tappable */
+  .form-input,
+  .form-textarea,
+  .form-select {
+    width: 100%;
+    min-height: 44px;
+  }
+
+  /* WhatsApp float: move up slightly to never cover submit button */
+  .whatsapp-float {
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  /* Studio metrics: tighter padding */
+  .studio-metrics-cloud {
+    padding: 2rem 1rem;
+  }
+
+  /* Marquee: slightly smaller text */
+  .m-item {
+    font-size: 1rem;
+  }
+
   .hero-main-panel {
     padding: 1.75rem 1rem;
   }
@@ -3077,6 +3153,42 @@ img, svg {
   .whatsapp-float {
     animation: none !important;
   }
+}
+
+/* ==========================================================================
+   SVG ICON DISPLAY HELPERS
+   Ensures inline SVG icons render correctly in flex, text, and mixed contexts
+   without disrupting existing layout, spacing, or alignment.
+   ========================================================================== */
+
+/* Icons used inside non-flex text/inline flow contexts: must be inline-block */
+.v-fcm-alert svg,
+.cap-header-title svg {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+/* Icons inside flex-row parent containers: block is fine, just prevent shrink */
+.address-lock svg,
+.v-quote-glyph svg,
+.v-node-icon svg,
+.tab-icon svg,
+.mobile-icon svg {
+  display: block;
+  flex-shrink: 0;
+}
+
+/* Service icon bubble and role avatar badge SVGs */
+.svc-icon-svg,
+.role-icon-svg {
+  display: block;
+  flex-shrink: 0;
+}
+
+/* Keep font-size for the ✦ AI service bubble text glyph */
+.service-icon-bubble {
+  font-size: 1.35rem;
 }
 
 /* ==========================================================================
