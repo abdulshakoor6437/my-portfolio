@@ -408,8 +408,11 @@ function initClipboardToast() {
 }
 
 /* ==========================================================================
-   7. CONTACT FORM — Server-side POST to /contact (nodemailer)
+   7. CONTACT FORM — Web3Forms API Integration with Mailto Fallback
    ========================================================================== */
+// Web3Forms Access Key (Get yours free from https://web3forms.com)
+const WEB3FORMS_ACCESS_KEY = 'YOUR_WEB3FORMS_ACCESS_KEY';
+
 function initContactForm() {
   const form       = document.getElementById('contactForm');
   const formStatus = document.getElementById('formStatus');
@@ -422,8 +425,11 @@ function initContactForm() {
 
     const name        = form.name.value.trim();
     const email       = form.email.value.trim();
-    const projectType = form.projectType.value;
+    const projectType = form.projectType ? form.projectType.value : 'General Inquiry';
     const message     = form.message.value.trim();
+    const accessKey   = (form.access_key && form.access_key.value && form.access_key.value !== 'YOUR_WEB3FORMS_ACCESS_KEY') 
+                        ? form.access_key.value 
+                        : WEB3FORMS_ACCESS_KEY;
 
     // Client-side validation
     if (!name || !email || !message) {
@@ -441,28 +447,56 @@ function initContactForm() {
     formStatus.textContent = '';
     formStatus.setAttribute('aria-hidden', 'true');
 
-    try {
-      const res  = await fetch('/contact', {
-        method:  'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify({ name, email, projectType, message })
-      });
-      const data = await res.json();
+    // Helper for Mailto Fallback
+    function triggerMailtoFallback() {
+      const mailtoSubject = encodeURIComponent(`Portfolio Inquiry: ${projectType} from ${name}`);
+      const mailtoBody    = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nDomain: ${projectType}\n\nMessage:\n${message}`);
+      window.location.href = `mailto:a.shakoor9744@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
 
-      if (data.ok) {
+      formStatus.className = 'form-status success';
+      formStatus.textContent = 'Message prepared in your email client! If it did not open automatically, please send directly to a.shakoor9744@gmail.com.';
+      formStatus.setAttribute('aria-hidden', 'false');
+    }
+
+    // If key is not configured, fall back to mailto directly
+    if (!accessKey || accessKey === 'YOUR_WEB3FORMS_ACCESS_KEY') {
+      triggerMailtoFallback();
+      submitBtn.disabled = false;
+      submitBtn.querySelector('span').textContent = 'Send Message';
+      return;
+    }
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: name,
+          email: email,
+          subject: `New Portfolio Inquiry: ${projectType} from ${name}`,
+          message: `Project Domain: ${projectType}\n\nMessage:\n${message}`,
+          from_name: 'Abdul Shakoor Portfolio'
+        })
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
         formStatus.className = 'form-status success';
-        formStatus.textContent = 'Thank you—your inquiry has been sent. Abdul will get back to you soon.';
+        formStatus.textContent = 'Message sent! Thank you—Abdul will get back to you soon.';
         formStatus.setAttribute('aria-hidden', 'false');
         form.reset();
       } else {
-        formStatus.className = 'form-status error';
-        formStatus.textContent = data.error || 'Something went wrong. Please try again.';
-        formStatus.setAttribute('aria-hidden', 'false');
+        console.warn('Web3Forms returned non-success:', data);
+        triggerMailtoFallback();
       }
-    } catch (_err) {
-      formStatus.className = 'form-status error';
-      formStatus.textContent = 'Network error. Please check your connection and try again.';
-      formStatus.setAttribute('aria-hidden', 'false');
+    } catch (err) {
+      console.error('Web3Forms submission error, triggering mailto fallback:', err);
+      triggerMailtoFallback();
     } finally {
       submitBtn.disabled = false;
       submitBtn.querySelector('span').textContent = 'Send Message';
