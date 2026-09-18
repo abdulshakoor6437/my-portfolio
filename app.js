@@ -411,7 +411,7 @@ function initClipboardToast() {
    7. CONTACT FORM — Web3Forms API Integration with Mailto Fallback
    ========================================================================== */
 // Web3Forms Access Key (Get yours free from https://web3forms.com)
-const WEB3FORMS_ACCESS_KEY = 'YOUR_WEB3FORMS_ACCESS_KEY';
+const WEB3FORMS_ACCESS_KEY = 'cc95b092-151e-4568-b1a1-0047ae944eeb';
 
 function initContactForm() {
   const form       = document.getElementById('contactForm');
