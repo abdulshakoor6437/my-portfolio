@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abdul Shakoor — Full-Stack Developer &amp; AI Automation Engineer</title>
+
+  <!-- Meta / SEO -->
+  <meta name="description"
+    content="Portfolio of Abdul Shakoor — Full-Stack Developer &amp; AI Automation Engineer specializing in MERN/Next.js platforms, Generative AI workflows (OpenAI API, LangChain), and cross-platform Flutter apps.">
+  <meta name="keywords"
+    content="Abdul Shakoor, Full-Stack Developer, AI Automation Engineer, Next.js, React.js, Node.js, Express, MongoDB, Flutter, Firebase, OpenAI API, LangChain, WhatsApp API, Pakistan">
+  <meta name="author" content="Abdul Shakoor">
+  <meta name="theme-color" content="#1F1338">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Abdul Shakoor — Full-Stack Developer &amp; AI Automation Engineer">
+  <meta property="og:description"
+    content="Building reliable web platforms, automated AI workflows, and cross-platform mobile apps that scale.">
+
+  <!-- Google Fonts: Syne (Expressive Display) + Plus Jakarta Sans (Body) + JetBrains Mono (Tech) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Syne:wght@700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Schema.org JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Abdul Shakoor",
+    "jobTitle": "Full-Stack Developer & AI Automation Engineer",
+    "description": "Specializing in the MERN/Next.js ecosystem with Generative AI integrations via OpenAI API and LangChain, plus secure IT infrastructure at scale.",
+    "email": "a.shakoor9744@gmail.com",
+    "telephone": "+92-322-9164283",
+    "sameAs": [
+      "https://github.com/abdulshakoor6437",
+      "https://fiverr.com/abdulshakoor733"
+    ],
+    "knowsAbout": [
+      "React.js",
+      "Next.js",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Flutter",
+      "Firebase Auth",
+      "Cloud Firestore",
+      "OpenAI API",
+      "LangChain",
+      "WhatsApp API"
+    ]
+  }
+  </script>
+</head>
+
+<body class="theme-purple-creative">
+
+  <!-- Background Decorative Grid Lines (Runs throughout dark purple canvas) -->
+  <div class="canvas-grid-lines" aria-hidden="true">
+    <div class="grid-line"></div>
+    <div class="grid-line"></div>
+    <div class="grid-line"></div>
+    <div class="grid-line"></div>
+    <div class="grid-line"></div>
+  </div>
+
+  <!-- SLIM STICKY HEADER (ON DEEP PURPLE) -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-container">
+
+      <!-- Brand Identity / Stylized Browser Monogram -->
+      <a href="#hero" class="brand-link" aria-label="Abdul Shakoor — Home">
+        <div class="brand-browser-badge">
+          <div class="browser-dots sm" aria-hidden="true">
+            <span class="b-dot coral"></span>
+            <span class="b-dot peach"></span>
+            <span class="b-dot mint"></span>
+          </div>
+          <span class="brand-monogram-text">AS</span>
+        </div>
+        <div class="brand-meta">
+          <span class="brand-name">Abdul Shakoor</span>
+          <span class="brand-subtitle">Creative Engineering</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="#projects" class="nav-link"><span>01</span> Work</a></li>
+          <li><a href="#services" class="nav-link"><span>02</span> Services</a></li>
+          <li><a href="#process" class="nav-link"><span>03</span> Process</a></li>
+          <li><a href="#studio" class="nav-link"><span>04</span> Studio</a></li>
+          <li><a href="#contact" class="nav-link"><span>05</span> Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <div class="header-status-pill" title="Contracting Availability">
+          <span class="pulse-indicator mint-pulse" aria-hidden="true"></span>
+          <span class="status-pill-text">theater and creative works</span>
+        </div>
+        <a href="#contact" class="btn btn-primary btn-sm btn-header-cta">Start a Project</a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-toggle" id="mobileNavToggle" aria-label="Toggle Navigation Menu" aria-expanded="false"
+          aria-controls="mobileNavDrawer">
+          <span class="toggle-bar"></span>
+          <span class="toggle-bar"></span>
+          <span class="toggle-bar"></span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer" id="mobileNavDrawer" aria-hidden="true">
+      <div class="mobile-drawer-inner">
+        <div class="mobile-status-pill">
+          <span class="pulse-indicator mint-pulse"></span>
+          <span>theater and creative works</span>
+        </div>
+        <ul class="mobile-nav-list">
+          <li><a href="#projects" class="mobile-nav-link"><span>01</span> Selected Work</a></li>
+          <li><a href="#services" class="mobile-nav-link"><span>02</span> Services &amp; Capabilities</a></li>
+          <li><a href="#process" class="mobile-nav-link"><span>03</span> 4-Stage Process</a></li>
+          <li><a href="#studio" class="mobile-nav-link"><span>04</span> The Engineering Studio</a></li>
+          <li><a href="#contact" class="mobile-nav-link"><span>05</span> Contact &amp; Inquiry</a></li>
+        </ul>
+        <div class="mobile-drawer-footer">
+          <a href="#contact" class="btn btn-primary btn-block mobile-drawer-cta">Start a Project →</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- HERO SECTION (FULL-SCREEN DEEP PURPLE + SCALLOPED CLOUD PANEL) -->
+    <section class="hero-section" id="hero">
+
+      <!-- Floating Background SVG Doodles (Parallax & Gentle Floating Animations) -->
+      <div class="hero-doodles-layer" aria-hidden="true">
+        <!-- Floating Planet with Rings -->
+        <div class="floating-doodle doodle-planet float-slow parallax-item" data-speed="0.08">
+          <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
+            <circle cx="36" cy="36" r="22" fill="#FFA07A" fill-opacity="0.9" />
+            <ellipse cx="36" cy="36" rx="34" ry="10" stroke="#FF553E" stroke-width="3" transform="rotate(-20 36 36)" />
+            <circle cx="28" cy="30" r="4" fill="#FFE5D9" />
+          </svg>
+        </div>
+
+        <!-- Floating Star 1 -->
+        <div class="floating-doodle doodle-star-1 float-gentle parallax-item" data-speed="0.12">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <path d="M20 0L24.5 15.5L40 20L24.5 24.5L20 40L15.5 24.5L0 20L15.5 15.5L20 0Z" fill="#FFD166" />
+          </svg>
+        </div>
+
+        <!-- Floating Star 2 -->
+        <div class="floating-doodle doodle-star-2 float-slow parallax-item" data-speed="0.05">
+          <svg width="30" height="30" viewBox="0 0 40 40" fill="none">
+            <path d="M20 0L24.5 15.5L40 20L24.5 24.5L20 40L15.5 24.5L0 20L15.5 15.5L20 0Z" fill="#4ECCA3" />
+          </svg>
+        </div>
+
+        <!-- Floating Cloud Doodle -->
+        <div class="floating-doodle doodle-cloud float-reverse parallax-item" data-speed="0.06">
+          <svg width="90" height="54" viewBox="0 0 90 54" fill="none">
+            <path
+              d="M22 45C12.0589 45 4 36.9411 4 27C4 17.5878 11.2335 9.86545 20.4578 9.07684C23.6334 3.74317 29.3976 0 36 0C44.7571 0 52.0722 6.20811 53.7226 14.5024C55.9867 13.5255 58.4682 13 61.087 13C71.5323 13 80 21.5066 80 32C80 42.4934 71.5323 51 61.087 51L22 51"
+              stroke="#B8A7EA" stroke-width="2.5" stroke-dasharray="4 4" />
+          </svg>
+        </div>
+
+        <!-- Floating Tech Illustration: API Browser Window -->
+
+
+        <!-- Floating Tech Illustration: AI Prompt Node -->
+        <div class="floating-doodle doodle-tech-ai float-slow" style="animation-delay: -4s;">
+          <div class="mini-ai-node-card">
+            <div class="ai-node-badge">✦ LangChain + OpenAI</div>
+            <div class="ai-node-text">&quot;Resolve slot conflicts...&quot;</div>
+            <div class="ai-node-status">✓ Autonomous Lock</div>
+          </div>
+        </div>
+
+        <!-- Floating Tech Illustration: Mobile Escrow Badge -->
+        <div class="floating-doodle doodle-tech-mobile float-gentle" style="animation-delay: -1s;">
+          <div class="mini-mobile-badge">
+            <span class="mobile-icon">📱</span>
+            <div class="mobile-meta">
+              <span class="mobile-title">Flutter + SECP</span>
+              <span class="mobile-sub">Escrow Sync Verified</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container hero-container">
+
+        <!-- Large Centered Scalloped Cloud Panel -->
+        <div class="scalloped-cloud-panel hero-main-panel reveal-on-scroll">
+
+          <!-- Cloud Scalloped Top Accent -->
+          <div class="panel-scallop-decor" aria-hidden="true"></div>
+
+          <div class="panel-inner-content">
+
+            <!-- Intro Eyebrow with Sparkle -->
+            <div class="hero-intro-eyebrow">
+              <span class="sparkle-icon">✦</span>
+              <span class="intro-eyebrow-text">I’m Abdul Shakoor, a freelance Webflow web designer &amp; developer
+                bringing you the</span>
+            </div>
+
+            <!-- Big Expressive Headline -->
+            <h1 class="hero-headline">
+              Website of your <span class="creative-highlight">digital dreams</span>
+            </h1>
+
+            <!-- Supporting Narrative -->
+            <p class="hero-description">
+              Welcome! If you’re looking for an Awwwards-featured Premium Webflow Partner to build your charmingly
+              interactive &amp; animated website, make yourself comfortable—you’ve come to the right place.
+            </p>
+
+            <!-- Dual Punchy CTAs -->
+            <div class="hero-action-buttons">
+              <a href="#contact" class="btn btn-primary btn-lg">
+                <span>Get In Touch</span>
+                <span class="btn-arrow-bounce">→</span>
+              </a>
+              <a href="#projects" class="btn btn-secondary btn-lg">
+                <span>See Portfolio</span>
+                <span class="btn-arrow-down">↓</span>
+              </a>
+            </div>
+
+            <!-- Hero Interactive 3-Option Capability Switcher -->
+            <div class="hero-capability-container">
+              <div class="capability-switcher-header">
+                <span class="cap-header-title">⚡ Interactive Capability Switcher</span>
+                <span class="cap-header-hint">Click a discipline to explore</span>
+              </div>
+
+              <!-- 3 Switcher Buttons -->
+              <div class="capability-switcher-tabs" role="tablist" aria-label="Core Engineering Disciplines">
+                <button class="cap-tab-btn active" role="tab" aria-selected="true" data-tab="web">
+                  <span class="tab-icon">🌐</span>
+                  <span>Full-Stack Web</span>
+                </button>
+                <button class="cap-tab-btn" role="tab" aria-selected="false" data-tab="ai">
+                  <span class="tab-icon">✦</span>
+                  <span>AI Automation</span>
+                </button>
+                <button class="cap-tab-btn" role="tab" aria-selected="false" data-tab="mobile">
+                  <span class="tab-icon">📱</span>
+                  <span>Mobile &amp; Escrow</span>
+                </button>
+              </div>
+
+              <!-- Switcher Content Panels -->
+              <div class="capability-panels-wrap">
+                <!-- Panel 1: Full-Stack Web -->
+                <div class="cap-panel active" id="cap-panel-web" role="tabpanel">
+                  <div class="cap-panel-grid">
+                    <div class="cap-info">
+                      <h4 class="cap-title">MERN &amp; Next.js Administrative Systems</h4>
+                      <p class="cap-desc">Role-based access control (RBAC), immutable audit ledgers, high-volume MongoDB
+                        aggregation pipelines, and responsive frontend UI.</p>
+                      <div class="cap-tags">
+                        <span class="cap-pill">Next.js SSR</span>
+                        <span class="cap-pill">React 18</span>
+                        <span class="cap-pill">Express REST</span>
+                        <span class="cap-pill">MongoDB Aggregates</span>
+                        <span class="cap-pill">JWT / RBAC</span>
+                      </div>
+                    </div>
+                    <div class="cap-metric-box">
+                      <div class="metric-row">
+                        <span class="m-label">Audit Status:</span>
+                        <span class="m-val text-mint">Real-Time State Delta</span>
+                      </div>
+                      <div class="metric-row">
+                        <span class="m-label">Auth Guard:</span>
+                        <span class="m-val text-coral">Multi-Tier RBAC</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Panel 2: AI Automation -->
+                <div class="cap-panel" id="cap-panel-ai" role="tabpanel" hidden>
+                  <div class="cap-panel-grid">
+                    <div class="cap-info">
+                      <h4 class="cap-title">Agentic AI &amp; LangChain Pipelines</h4>
+                      <p class="cap-desc">Transforming natural language prompts into deterministic actions, automated
+                        calendar conflict resolution, and WhatsApp API broadcast webhooks.</p>
+                      <div class="cap-tags">
+                        <span class="cap-pill pill-ai">OpenAI API</span>
+                        <span class="cap-pill pill-ai">LangChain Agents</span>
+                        <span class="cap-pill pill-ai">Constraint Solvers</span>
+                        <span class="cap-pill pill-ai">WhatsApp API</span>
+                        <span class="cap-pill pill-ai">Structured JSON</span>
+                      </div>
+                    </div>
+                    <div class="cap-metric-box">
+                      <div class="metric-row">
+                        <span class="m-label">Prompt Parser:</span>
+                        <span class="m-val text-coral">&quot;Find 45m after 10am&quot;</span>
+                      </div>
+                      <div class="metric-row">
+                        <span class="m-label">Resolved Slot:</span>
+                        <span class="m-val text-mint">10:30 AM (Zero Conflicts)</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Panel 3: Mobile & Escrow -->
+                <div class="cap-panel" id="cap-panel-mobile" role="tabpanel" hidden>
+                  <div class="cap-panel-grid">
+                    <div class="cap-info">
+                      <h4 class="cap-title">Flutter Apps &amp; SECP Escrow Tracking</h4>
+                      <p class="cap-desc">High-framerate iOS &amp; Android applications with Cloud Firestore
+                        synchronization, background FCM push notifications, and offline SQLite caching.</p>
+                      <div class="cap-tags">
+                        <span class="cap-pill pill-mobile">Flutter iOS/Android</span>
+                        <span class="cap-pill pill-mobile">Cloud Firestore</span>
+                        <span class="cap-pill pill-mobile">Firebase Auth</span>
+                        <span class="cap-pill pill-mobile">FCM Push</span>
+                        <span class="cap-pill pill-mobile">Offline Storage</span>
+                      </div>
+                    </div>
+                    <div class="cap-metric-box">
+                      <div class="metric-row">
+                        <span class="m-label">Compliance:</span>
+                        <span class="m-val text-mint">Pakistan's 1st SECP Escrow App</span>
+                      </div>
+                      <div class="metric-row">
+                        <span class="m-label">Persistence:</span>
+                        <span class="m-val text-coral">Offline-First Sync</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Direct Reach Channels -->
+            <div class="hero-channels-row">
+              <span class="channels-title">Verified Channels:</span>
+              <div class="channels-pills-list">
+                <a href="mailto:a.shakoor9744@gmail.com" class="channel-pill" title="Email Abdul Shakoor">
+                  <svg class="pill-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                  <span>a.shakoor9744@gmail.com</span>
+                </a>
+                <a href="tel:+923229164283" class="channel-pill" title="Call or WhatsApp">
+                  <svg class="pill-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                  <span>+92-322-9164283</span>
+                </a>
+                <a href="https://github.com/abdulshakoor6437" target="_blank" rel="noopener noreferrer"
+                  class="channel-pill" title="GitHub Profile">
+                  <svg class="pill-svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                  </svg>
+                  <span>GitHub</span>
+                </a>
+                <a href="https://fiverr.com/abdulshakoor733" target="_blank" rel="noopener noreferrer"
+                  class="channel-pill fiverr-pill" title="Fiverr Profile">
+                  <span class="fiverr-mark">fi</span>
+                  <span>Fiverr</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- SLIGHTLY ANGLED ANIMATED SKILLS MARQUEE -->
+      <div class="angled-marquee-wrapper" aria-label="Skills Marquee Ticker">
+        <div class="marquee-strip">
+          <div class="marquee-track" tabindex="0">
+            <div class="marquee-content">
+              <span class="m-item"><span class="m-star">✦</span> Web Platforms</span>
+              <span class="m-item"><span class="m-star">✦</span> AI Automation &amp; LangChain</span>
+              <span class="m-item"><span class="m-star">✦</span> REST &amp; GraphQL APIs</span>
+              <span class="m-item"><span class="m-star">✦</span> Cross-Platform Flutter</span>
+              <span class="m-item"><span class="m-star">✦</span> SECP Escrow Architecture</span>
+              <span class="m-item"><span class="m-star">✦</span> OpenAI API &amp; Agentic Workflows</span>
+              <span class="m-item"><span class="m-star">✦</span> Next.js &amp; React Ecosystem</span>
+              <span class="m-item"><span class="m-star">✦</span> WhatsApp API Cloud Dispatches</span>
+              <span class="m-item"><span class="m-star">✦</span> Firebase &amp; Cloud Firestore</span>
+            </div>
+            <div class="marquee-content" aria-hidden="true">
+              <span class="m-item"><span class="m-star">✦</span> Web Platforms</span>
+              <span class="m-item"><span class="m-star">✦</span> AI Automation &amp; LangChain</span>
+              <span class="m-item"><span class="m-star">✦</span> REST &amp; GraphQL APIs</span>
+              <span class="m-item"><span class="m-star">✦</span> Cross-Platform Flutter</span>
+              <span class="m-item"><span class="m-star">✦</span> SECP Escrow Architecture</span>
+              <span class="m-item"><span class="m-star">✦</span> OpenAI API &amp; Agentic Workflows</span>
+              <span class="m-item"><span class="m-star">✦</span> Next.js &amp; React Ecosystem</span>
+              <span class="m-item"><span class="m-star">✦</span> WhatsApp API Cloud Dispatches</span>
+              <span class="m-item"><span class="m-star">✦</span> Firebase &amp; Cloud Firestore</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- SELECTED WORK / CASE STUDIES (OFF-WHITE SCALLOPED SECTION + BROWSER WINDOW CARDS) -->
+    <section class="projects-scalloped-section" id="projects">
+
+      <!-- Top Wave Divider -->
+      <div class="scallop-divider-top" aria-hidden="true"></div>
+
+      <div class="projects-section-inner">
+        <div class="container">
+
+          <div class="section-header-row reveal-on-scroll">
+            <div class="section-title-wrap">
+              <div class="editorial-badge">
+                <span class="badge-num">01</span>
+                <span>Selected Production Case Studies</span>
+              </div>
+              <h2 class="editorial-heading">
+                Tested systems built for scale, compliance &amp; speed.
+                <span class="heading-star-doodle" aria-hidden="true">✦</span>
+              </h2>
+              <p class="editorial-subhead">
+                Explore four real-world production platforms, mobile applications, and autonomous AI engines engineered
+                with clean architecture and strict security standards.
+              </p>
+            </div>
+
+            <!-- Playful Category Filter Tabs -->
+            <div class="creative-filter-pills" role="tablist" aria-label="Filter Projects by Domain">
+              <button class="filter-pill-btn active" data-filter="all" role="tab" aria-selected="true">
+                <span>All Projects</span>
+                <span class="pill-count">4</span>
+              </button>
+              <button class="filter-pill-btn" data-filter="web" role="tab" aria-selected="false">
+                <span>Web &amp; Admin</span>
+              </button>
+              <button class="filter-pill-btn" data-filter="ai" role="tab" aria-selected="false">
+                <span>AI &amp; Automation</span>
+              </button>
+              <button class="filter-pill-btn" data-filter="mobile" role="tab" aria-selected="false">
+                <span>Mobile &amp; Escrow</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Browser Window Project Cards Grid -->
+          <div class="browser-projects-grid">
+
+            <!-- PROJECT 01: PTB Tobacco Management System -->
+            <article class="browser-project-card reveal-on-scroll" data-category="web" id="card-ptb">
+
+              <!-- Stylized Browser Window Top Bar -->
+              <div class="browser-window-header">
+                <div class="browser-dots" aria-hidden="true">
+                  <span class="b-dot coral"></span>
+                  <span class="b-dot peach"></span>
+                  <span class="b-dot mint"></span>
+                </div>
+                <div class="browser-address-bar">
+                  <span class="address-lock">🔒</span>
+                  <span class="address-url">ptb-internal.gov/compliance-rbac</span>
+                </div>
+                <span class="browser-cat-badge">Enterprise Web</span>
+              </div>
+
+              <!-- Illustrated CSS/SVG Canvas -->
+              <div class="browser-visual-canvas canvas-ptb">
+                <div class="visual-inner-mockup">
+                  <div class="mockup-sidebar">
+                    <div class="m-nav-item active">Audit Ledger</div>
+                    <div class="m-nav-item">Quotas</div>
+                    <div class="m-nav-item">Licensees</div>
+                    <div class="m-nav-item">RBAC Tokens</div>
+                  </div>
+                  <div class="mockup-main">
+                    <div class="m-pill-row">
+                      <span class="m-status-pill blue">JWT Auth: Multi-Tier RBAC</span>
+                      <span class="m-status-pill green">Audit: Immutable Sync</span>
+                    </div>
+                    <div class="m-table-rows">
+                      <div class="m-row"><span class="m-tag admin">SUPER_ADMIN</span> Quota Reallocated • Verified</div>
+                      <div class="m-row"><span class="m-tag inspector">INSPECTOR_T2</span> Field Compliance Logged</div>
+                      <div class="m-row"><span class="m-tag auditor">AUDITOR</span> Cryptographic Delta Stored</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Dark-Purple Information Card -->
+              <div class="browser-project-info">
+                <div class="project-header-meta">
+                  <span class="p-number">01</span>
+                  <h3 class="p-title">PTB Tobacco Management System</h3>
+                </div>
+                <p class="p-description">
+                  A regulatory compliance portal built for strict administrative governance, featuring multi-tier
+                  role-based access control (RBAC), immutable audit logging, and automated quota validation for
+                  multi-stakeholder operations.
+                </p>
+                <div class="p-tags-row">
+                  <span class="p-tech-pill">React.js</span>
+                  <span class="p-tech-pill">Node.js / Express</span>
+                  <span class="p-tech-pill">MongoDB</span>
+                  <span class="p-tech-pill">JWT Auth</span>
+                  <span class="p-tech-pill">RBAC</span>
+                </div>
+                <div class="p-action-row">
+                  <button class="btn btn-outline-light btn-sm open-modal-btn" data-project="ptb">
+                    <span>Inspect Architecture &amp; Features</span>
+                    <span class="arrow-glyph">→</span>
+                  </button>
+                </div>
+              </div>
+
+            </article>
+
+            <!-- PROJECT 02: Zimma Solution Mobile App -->
+            <article class="browser-project-card reveal-on-scroll" data-category="mobile" id="card-zimma">
+
+              <!-- Stylized Browser Window Top Bar -->
+              <div class="browser-window-header">
+                <div class="browser-dots" aria-hidden="true">
+                  <span class="b-dot coral"></span>
+                  <span class="b-dot peach"></span>
+                  <span class="b-dot mint"></span>
+                </div>
+                <div class="browser-address-bar">
+                  <span class="address-lock">🔒</span>
+                  <span class="address-url">zimma-escrow.app/secp-tracker</span>
+                </div>
+                <span class="browser-cat-badge badge-mobile">Mobile &amp; Escrow</span>
+              </div>
+
+              <!-- Illustrated CSS/SVG Canvas -->
+              <div class="browser-visual-canvas canvas-zimma">
+                <div class="visual-phone-frame">
+                  <div class="v-notch"></div>
+                  <div class="v-phone-body">
+                    <div class="v-phone-brand">
+                      <span>ZIMMA ESCROW</span>
+                      <span class="v-secp-badge">SECP REGISTERED</span>
+                    </div>
+                    <div class="v-escrow-card">
+                      <div class="v-escrow-status">
+                        <span class="pulse-indicator mint-pulse sm"></span>
+                        <span>Funds Secured in Escrow</span>
+                      </div>
+                      <div class="v-escrow-amount">PKR 150,000</div>
+                      <div class="v-escrow-bar">
+                        <div class="v-escrow-fill" style="width: 75%;"></div>
+                      </div>
+                      <div class="v-escrow-sub">3 of 4 Milestones Approved</div>
+                    </div>
+                    <div class="v-fcm-alert">🔔 FCM Push Sync: Milestone Approved</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Dark-Purple Information Card -->
+              <div class="browser-project-info">
+                <div class="project-header-meta">
+                  <span class="p-number">02</span>
+                  <h3 class="p-title">Zimma Solution Mobile App</h3>
+                </div>
+                <p class="p-description">
+                  Pakistan’s first SECP-registered escrow application. A cross-platform task coordination and milestone
+                  management platform engineered with background push alerts, offline SQLite/Hive caching, and secure
+                  Cloud Firestore sync.
+                </p>
+                <div class="p-tags-row">
+                  <span class="p-tech-pill">Flutter</span>
+                  <span class="p-tech-pill">Firebase Auth</span>
+                  <span class="p-tech-pill">Cloud Firestore</span>
+                  <span class="p-tech-pill">FCM Push</span>
+                  <span class="p-tech-pill">Offline Sync</span>
+                </div>
+                <div class="p-action-row">
+                  <button class="btn btn-outline-light btn-sm open-modal-btn" data-project="zimma">
+                    <span>Inspect Architecture &amp; Features</span>
+                    <span class="arrow-glyph">→</span>
+                  </button>
+                </div>
+              </div>
+
+            </article>
+
+            <!-- PROJECT 03: Intelligent Schedule Management Engine -->
+            <article class="browser-project-card reveal-on-scroll" data-category="ai" id="card-schedule-ai">
+
+              <!-- Stylized Browser Window Top Bar -->
+              <div class="browser-window-header">
+                <div class="browser-dots" aria-hidden="true">
+                  <span class="b-dot coral"></span>
+                  <span class="b-dot peach"></span>
+                  <span class="b-dot mint"></span>
+                </div>
+                <div class="browser-address-bar">
+                  <span class="address-lock">🔒</span>
+                  <span class="address-url">agent.scheduler.ai/pipeline-exec</span>
+                </div>
+                <span class="browser-cat-badge badge-ai">Agentic AI</span>
+              </div>
+
+              <!-- Illustrated CSS/SVG Canvas -->
+              <div class="browser-visual-canvas canvas-ai">
+                <div class="visual-ai-diagram">
+                  <div class="v-prompt-bubble">
+                    <span class="v-quote-glyph">💬</span>
+                    <span>&quot;Book 45m sprint review tomorrow after 10am...&quot;</span>
+                  </div>
+                  <div class="v-pipeline-flow">
+                    <div class="v-flow-node">
+                      <span class="v-node-icon">✦</span>
+                      <span class="v-node-text">LangChain Parser</span>
+                    </div>
+                    <span class="v-flow-arrow">→</span>
+                    <div class="v-flow-node">
+                      <span class="v-node-icon">⚡</span>
+                      <span class="v-node-text">Constraint Engine</span>
+                    </div>
+                    <span class="v-flow-arrow">→</span>
+                    <div class="v-flow-node active-node">
+                      <span class="v-node-icon">📅</span>
+                      <span class="v-node-text">10:30 AM Slot</span>
+                    </div>
+                  </div>
+                  <div class="v-result-badge">✓ Conflict-Free Slot Synchronized to Calendar</div>
+                </div>
+              </div>
+
+              <!-- Dark-Purple Information Card -->
+              <div class="browser-project-info">
+                <div class="project-header-meta">
+                  <span class="p-number">03</span>
+                  <h3 class="p-title">Intelligent Schedule Management Engine</h3>
+                </div>
+                <p class="p-description">
+                  Autonomous agentic assistant that parses natural language requests into conflict-resolved,
+                  time-blocked calendar entries with multi-constraint validation and timezone normalization.
+                </p>
+                <div class="p-tags-row">
+                  <span class="p-tech-pill">Next.js</span>
+                  <span class="p-tech-pill">OpenAI API</span>
+                  <span class="p-tech-pill">LangChain</span>
+                  <span class="p-tech-pill">Constraint Solvers</span>
+                  <span class="p-tech-pill">TypeScript</span>
+                </div>
+                <div class="p-action-row">
+                  <button class="btn btn-outline-light btn-sm open-modal-btn" data-project="schedule-ai">
+                    <span>Inspect Architecture &amp; Features</span>
+                    <span class="arrow-glyph">→</span>
+                  </button>
+                </div>
+              </div>
+
+            </article>
+
+            <!-- PROJECT 04: SZABIST Admin v1.0 -->
+            <article class="browser-project-card reveal-on-scroll" data-category="web" id="card-szabist">
+
+              <!-- Stylized Browser Window Top Bar -->
+              <div class="browser-window-header">
+                <div class="browser-dots" aria-hidden="true">
+                  <span class="b-dot coral"></span>
+                  <span class="b-dot peach"></span>
+                  <span class="b-dot mint"></span>
+                </div>
+                <div class="browser-address-bar">
+                  <span class="address-lock">🔒</span>
+                  <span class="address-url">szabist-admin.edu/roster-dispatch</span>
+                </div>
+                <span class="browser-cat-badge">Enterprise Web</span>
+              </div>
+
+              <!-- Illustrated CSS/SVG Canvas -->
+              <div class="browser-visual-canvas canvas-szabist">
+                <div class="visual-szabist-grid">
+                  <div class="v-szabist-box">
+                    <span class="v-box-head">FACULTY ROSTER</span>
+                    <div class="v-roster-item">CS-301 • Hall A (09:00 - 10:30)</div>
+                    <div class="v-roster-item">SE-402 • Lab 3 (11:00 - 12:30)</div>
+                  </div>
+                  <div class="v-szabist-box">
+                    <span class="v-box-head">WHATSAPP DISPATCH</span>
+                    <div class="v-alert-pill green">✓ 142 Faculty Alerts Sent</div>
+                    <div class="v-alert-pill amber">✓ Room Clash Re-routed</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Dark-Purple Information Card -->
+              <div class="browser-project-info">
+                <div class="project-header-meta">
+                  <span class="p-number">04</span>
+                  <h3 class="p-title">SZABIST Admin v1.0 (Schedule System)</h3>
+                </div>
+                <p class="p-description">
+                  University scheduling and faculty coordination system equipped with automated WhatsApp API broadcast
+                  triggers, room allocation clash detection, and administrative roster management.
+                </p>
+                <div class="p-tags-row">
+                  <span class="p-tech-pill">Node.js / Express</span>
+                  <span class="p-tech-pill">MongoDB</span>
+                  <span class="p-tech-pill">WhatsApp API</span>
+                  <span class="p-tech-pill">Webhooks</span>
+                  <span class="p-tech-pill">Clash Logic</span>
+                </div>
+                <div class="p-action-row">
+                  <button class="btn btn-outline-light btn-sm open-modal-btn" data-project="szabist">
+                    <span>Inspect Architecture &amp; Features</span>
+                    <span class="arrow-glyph">→</span>
+                  </button>
+                </div>
+              </div>
+
+            </article>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Bottom Wave Divider -->
+      <div class="scallop-divider-bottom" aria-hidden="true"></div>
+
+    </section>
+
+    <!-- CORE SERVICES (DEEP-PURPLE GRID + STAGGERED SCALLOPED PANELS + RELEVANT LINE ART) -->
+    <section class="services-purple-section" id="services">
+      <div class="container">
+
+        <div class="section-center-head text-light reveal-on-scroll">
+          <div class="editorial-badge badge-light">
+            <span class="badge-num">02</span>
+            <span>Services &amp; Capabilities</span>
+          </div>
+          <h2 class="editorial-heading text-white">
+            End-to-end engineering tailored for business outcomes.
+          </h2>
+          <p class="editorial-subhead text-light-purple">
+            From architecture design through production deployment, I partner with founders, businesses, and engineering
+            teams to ship rock-solid software.
+          </p>
+        </div>
+
+        <div class="staggered-services-layout">
+
+          <!-- Service Card 1: Full-Stack Web + API Ladder Doodles -->
+          <div class="service-stagger-item reveal-on-scroll">
+
+            <!-- External Original Line Art: API Ladder & Cloud Flow -->
+            <div class="service-doodle-decor decor-ladder" aria-hidden="true">
+              <svg width="60" height="90" viewBox="0 0 60 90" fill="none">
+                <line x1="15" y1="10" x2="15" y2="80" stroke="#FFB088" stroke-width="3" stroke-linecap="round" />
+                <line x1="45" y1="10" x2="45" y2="80" stroke="#FFB088" stroke-width="3" stroke-linecap="round" />
+                <line x1="15" y1="25" x2="45" y2="25" stroke="#FF553E" stroke-width="3" />
+                <line x1="15" y1="45" x2="45" y2="45" stroke="#FF553E" stroke-width="3" />
+                <line x1="15" y1="65" x2="45" y2="65" stroke="#FF553E" stroke-width="3" />
+                <circle cx="15" cy="25" r="4" fill="#FFD166" />
+                <circle cx="45" cy="45" r="4" fill="#4ECCA3" />
+              </svg>
+            </div>
+
+            <div class="scalloped-cloud-panel service-panel">
+              <div class="service-panel-top">
+                <span class="service-index">01</span>
+                <div class="service-icon-bubble">🌐</div>
+              </div>
+              <h3 class="service-heading">Full-Stack Web Platforms</h3>
+              <p class="service-text">
+                Custom web applications built on MERN &amp; Next.js with multi-tier role-based JWT authentication,
+                immutable audit logging, data dashboards, and responsive frontends.
+              </p>
+              <div class="service-best-box">
+                <span class="best-tag">Best for:</span>
+                <span class="best-desc">SaaS products, role-gated admin portals, internal operations dashboards, and
+                  high-load APIs.</span>
+              </div>
+              <ul class="service-checklist">
+                <li>Next.js SSR &amp; React UI Architecture</li>
+                <li>RESTful API Architecture &amp; Express Services</li>
+                <li>Role-Based Access Control (RBAC) &amp; JWT Security</li>
+                <li>MongoDB Aggregations &amp; Schema Optimization</li>
+              </ul>
+              <div class="service-inquire-wrap">
+                <a href="#contact" class="service-cta-link" data-service-select="Full-Stack Web Application">
+                  <span>Inquire about Web Platforms</span>
+                  <span class="cta-arrow">→</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service Card 2: AI Automation + AI Neural Cube Doodles -->
+          <div class="service-stagger-item stagger-featured reveal-on-scroll">
+
+            <!-- External Original Line Art: Neural Cube & Data Pipe -->
+            <div class="service-doodle-decor decor-cube" aria-hidden="true">
+              <svg width="70" height="70" viewBox="0 0 70 70" fill="none">
+                <polygon points="35,10 60,25 35,40 10,25" stroke="#4ECCA3" stroke-width="2.5" fill="none" />
+                <polygon points="10,25 35,40 35,65 10,50" stroke="#4ECCA3" stroke-width="2.5" fill="none" />
+                <polygon points="60,25 35,40 35,65 60,50" stroke="#4ECCA3" stroke-width="2.5" fill="none" />
+                <circle cx="35" cy="40" r="4" fill="#FF553E" />
+              </svg>
+            </div>
+
+            <div class="scalloped-cloud-panel service-panel featured-purple-panel">
+              <div class="featured-service-pill">Popular Offering</div>
+              <div class="service-panel-top">
+                <span class="service-index">02</span>
+                <div class="service-icon-bubble ai-bubble">✦</div>
+              </div>
+              <h3 class="service-heading">AI Automation &amp; Integrations</h3>
+              <p class="service-text">
+                Generative AI systems and agentic workflows using OpenAI API and LangChain. Transforming unstructured
+                user requests into structured business actions and automated schedule coordination.
+              </p>
+              <div class="service-best-box">
+                <span class="best-tag">Best for:</span>
+                <span class="best-desc">Automating repetitive operational tasks, natural language scheduling assistants,
+                  and WhatsApp communication bots.</span>
+              </div>
+              <ul class="service-checklist">
+                <li>OpenAI API &amp; LLM Semantic Extraction</li>
+                <li>LangChain Chains &amp; Structured Output Parsers</li>
+                <li>WhatsApp API Broadcasts &amp; Webhook Triggers</li>
+                <li>Deterministic Constraint Solvers &amp; Scheduling</li>
+              </ul>
+              <div class="service-inquire-wrap">
+                <a href="#contact" class="service-cta-link" data-service-select="AI Automation & Agentic Engine">
+                  <span>Inquire about AI Automation</span>
+                  <span class="cta-arrow">→</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service Card 3: Mobile & Cloud + Device Cloud Art -->
+          <div class="service-stagger-item reveal-on-scroll">
+
+            <!-- External Original Line Art: Mobile Device & Cloud Sync -->
+            <div class="service-doodle-decor decor-mobile-sync" aria-hidden="true">
+              <svg width="60" height="85" viewBox="0 0 60 85" fill="none">
+                <rect x="12" y="10" width="36" height="65" rx="8" stroke="#B8A7EA" stroke-width="2.5" />
+                <line x1="24" y1="18" x2="36" y2="18" stroke="#B8A7EA" stroke-width="2" />
+                <circle cx="30" cy="65" r="3" fill="#FFD166" />
+                <path d="M4 35C0 35 -2 45 4 50C10 55 12 40 4 35Z" fill="#FFA07A" fill-opacity="0.3" />
+              </svg>
+            </div>
+
+            <div class="scalloped-cloud-panel service-panel">
+              <div class="service-panel-top">
+                <span class="service-index">03</span>
+                <div class="service-icon-bubble">📱</div>
+              </div>
+              <h3 class="service-heading">Mobile &amp; Workflow Systems</h3>
+              <p class="service-text">
+                Production Flutter applications for iOS and Android with Firebase backend integration, background push
+                notifications, offline data persistence, and Tier 1–3 IT diagnostic infrastructure support.
+              </p>
+              <div class="service-best-box">
+                <span class="best-tag">Best for:</span>
+                <span class="best-desc">Cross-platform mobile apps, escrow/milestone tracking, offline workflows, and IT
+                  infrastructure health.</span>
+              </div>
+              <ul class="service-checklist">
+                <li>Flutter Cross-Platform (iOS &amp; Android)</li>
+                <li>Firebase Auth &amp; Cloud Firestore Sync</li>
+                <li>FCM Push Alerts &amp; Offline Cache (SQLite/Hive)</li>
+                <li>Tier 1–3 IT Diagnostic &amp; Workflow Support</li>
+              </ul>
+              <div class="service-inquire-wrap">
+                <a href="#contact" class="service-cta-link" data-service-select="Cross-Platform Flutter App">
+                  <span>Inquire about Mobile &amp; Workflows</span>
+                  <span class="cta-arrow">→</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4-STAGE PROCESS TIMELINE (PLAYFUL STEP CARDS ON DEEP PURPLE) -->
+    <section class="process-purple-section" id="process">
+      <div class="container">
+
+        <div class="section-center-head text-light reveal-on-scroll">
+          <div class="editorial-badge badge-light">
+            <span class="badge-num">03</span>
+            <span>Disciplined Delivery Workflow</span>
+          </div>
+          <h2 class="editorial-heading text-white">
+            How I ship rock-solid software from start to finish.
+          </h2>
+          <p class="editorial-subhead text-light-purple">
+            A transparent, reliable 4-step process from discovery through production deployment—ensuring zero scope
+            drift and clean handoffs.
+          </p>
+        </div>
+
+        <div class="process-cards-grid">
+
+          <!-- Step 1 -->
+          <div class="process-browser-box reveal-on-scroll">
+            <div class="process-box-header">
+              <span class="process-step-num">01</span>
+              <span class="process-phase-badge">Discovery</span>
+            </div>
+            <h4 class="process-box-title">Discovery &amp; Architecture</h4>
+            <p class="process-box-desc">
+              Analyzing business constraints, compliance guidelines (SECP, RBAC), data schemas, and defining technical
+              architecture across frontend, backend, and AI agents.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="process-browser-box reveal-on-scroll">
+            <div class="process-box-header">
+              <span class="process-step-num">02</span>
+              <span class="process-phase-badge">Engineering</span>
+            </div>
+            <h4 class="process-box-title">Full-Stack &amp; AI Engineering</h4>
+            <p class="process-box-desc">
+              Iterative development with clean modular code (React, Next.js, Node, Flutter), prompt validation chains,
+              and secure database schemas with real-time sync.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="process-browser-box reveal-on-scroll">
+            <div class="process-box-header">
+              <span class="process-step-num">03</span>
+              <span class="process-phase-badge">Verification</span>
+            </div>
+            <h4 class="process-box-title">Security &amp; Audit Compliance</h4>
+            <p class="process-box-desc">
+              Rigorous verification of auth tokens, offline sync reconciliation, role-based boundary verification, and
+              audit log immutability to ensure zero unauthorized leaks.
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="process-browser-box reveal-on-scroll">
+            <div class="process-box-header">
+              <span class="process-step-num">04</span>
+              <span class="process-phase-badge">Deployment</span>
+            </div>
+            <h4 class="process-box-title">Deployment &amp; Scaled Ops</h4>
+            <p class="process-box-desc">
+              Production rollout with automated monitoring, uptime configuration, IT infrastructure support (Tier 1–3),
+              and continuous performance optimization.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- THE ABDUL SHAKOOR STUDIO / MULTI-HAT DISCIPLINES & METRICS -->
+    <section class="studio-section" id="studio">
+      <div class="container">
+
+        <div class="section-center-head text-light reveal-on-scroll">
+          <div class="editorial-badge badge-light">
+            <span class="badge-num">04</span>
+            <span>The Engineering Studio</span>
+          </div>
+          <h2 class="editorial-heading text-white">
+            One engineer. Three specialized disciplines.
+          </h2>
+          <p class="editorial-subhead text-light-purple">
+            Truthful representation of Abdul Shakoor's cross-functional capabilities—combining full-stack platforms,
+            autonomous AI engineering, and mobile systems into one seamless partner.
+          </p>
+        </div>
+
+        <!-- 3 Role Cards -->
+        <div class="studio-roles-grid">
+
+          <!-- Role 1: Full-Stack Engineer -->
+          <div class="studio-role-card reveal-on-scroll">
+            <div class="role-card-header">
+              <div class="role-avatar-badge avatar-web">
+                <span>💻</span>
+              </div>
+              <div class="role-title-wrap">
+                <h3 class="role-name">Full-Stack Architect</h3>
+                <span class="role-tagline">Web &amp; Admin Systems</span>
+              </div>
+            </div>
+            <p class="role-bio">
+              Engineers high-throughput web applications with Next.js, React, Node.js, and MongoDB. Specializes in
+              multi-tier role-based JWT auth and immutable audit trails.
+            </p>
+            <div class="role-stack-pills">
+              <span>Next.js</span>
+              <span>React 18</span>
+              <span>Node.js</span>
+              <span>MongoDB</span>
+              <span>REST APIs</span>
+            </div>
+          </div>
+
+          <!-- Role 2: AI Automation Builder -->
+          <div class="studio-role-card reveal-on-scroll">
+            <div class="role-card-header">
+              <div class="role-avatar-badge avatar-ai">
+                <span>🧠</span>
+              </div>
+              <div class="role-title-wrap">
+                <h3 class="role-name">AI Automation Builder</h3>
+                <span class="role-tagline">Agentic LLM Workflows</span>
+              </div>
+            </div>
+            <p class="role-bio">
+              Builds autonomous agentic systems with LangChain and OpenAI API. Translates natural language messages into
+              calendar bookings and automated WhatsApp alert triggers.
+            </p>
+            <div class="role-stack-pills">
+              <span>OpenAI API</span>
+              <span>LangChain</span>
+              <span>WhatsApp API</span>
+              <span>Agents</span>
+              <span>JSON Parsers</span>
+            </div>
+          </div>
+
+          <!-- Role 3: Mobile & Cloud Developer -->
+          <div class="studio-role-card reveal-on-scroll">
+            <div class="role-card-header">
+              <div class="role-avatar-badge avatar-mobile">
+                <span>📱</span>
+              </div>
+              <div class="role-title-wrap">
+                <h3 class="role-name">Mobile &amp; Cloud Developer</h3>
+                <span class="role-tagline">Flutter &amp; Escrow Infrastructure</span>
+              </div>
+            </div>
+            <p class="role-bio">
+              Crafts cross-platform Flutter mobile applications with Firebase Auth, Cloud Firestore sync, offline SQLite
+              cache, and Tier 1–3 IT diagnostic infrastructure support.
+            </p>
+            <div class="role-stack-pills">
+              <span>Flutter</span>
+              <span>Firebase</span>
+              <span>Firestore</span>
+              <span>FCM Push</span>
+              <span>Tier 1–3 IT</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Verified Track Record Metrics Card -->
+        <div class="scalloped-cloud-panel studio-metrics-cloud reveal-on-scroll" id="stats">
+          <div class="metrics-cloud-header">
+            <div class="metrics-eyebrow">
+              <span class="pulse-indicator mint-pulse"></span>
+              <span>VERIFIED TRACK RECORD • TRUTHFUL DATA</span>
+            </div>
+            <h3 class="metrics-cloud-title">Measurable impact delivered in production.</h3>
+          </div>
+
+          <div class="metrics-grid-3">
+            <!-- Stat 1 -->
+            <div class="metric-cloud-item">
+              <div class="metric-big-num">
+                <span class="num-val" data-target="2" id="statYears">0</span>
+                <span class="num-plus">+</span>
+              </div>
+              <h4 class="metric-head">Years Professional Experience</h4>
+              <p class="metric-sub">Hands-on delivery of production web platforms, automated AI pipelines, and mobile
+                apps.</p>
+            </div>
+
+            <!-- Stat 2 -->
+            <div class="metric-cloud-item highlight-stat">
+              <div class="metric-big-num coral-num">
+                <span class="num-val" data-target="35" id="statAccessibility">0</span>
+                <span class="num-plus">%</span>
+              </div>
+              <h4 class="metric-head">Data Accessibility Boost</h4>
+              <p class="metric-sub">Cross-department data accessibility improvement achieved at <strong>GCISC</strong>
+                through automated workflows.</p>
+            </div>
+
+            <!-- Stat 3 -->
+            <div class="metric-cloud-item">
+              <div class="metric-big-num">
+                <span class="num-val" data-target="6" id="statProjects">0</span>
+                <span class="num-plus">+</span>
+              </div>
+              <h4 class="metric-head">Technical Projects Shipped</h4>
+              <p class="metric-sub">Production systems shipped across enterprise web, SECP-registered mobile escrow, and
+                GenAI engines.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- BOLD THEATRICAL CONTACT SECTION -->
+    <section class="theatrical-contact-section" id="contact">
+
+      <!-- Colorful Geometric Backdrop Shapes -->
+      <div class="theatrical-backdrop" aria-hidden="true">
+        <div class="geo-shape shape-coral"></div>
+        <div class="geo-shape shape-mint"></div>
+        <div class="geo-shape shape-lavender"></div>
+      </div>
+
+      <div class="container">
+
+        <!-- Large Centered Scalloped Cloud Contact Panel -->
+        <div class="scalloped-cloud-panel contact-theatrical-panel reveal-on-scroll">
+
+          <div class="contact-panel-grid">
+
+            <!-- Left Column: Theatrical Pitch & Channels -->
+            <div class="contact-pitch-col">
+              <div class="editorial-badge">
+                <span class="badge-num">05</span>
+                <span>Let’s Build Together</span>
+              </div>
+
+              <h2 class="contact-theatrical-heading">
+                Have a project in mind? Let’s make it extraordinary.
+              </h2>
+
+              <p class="contact-theatrical-sub">
+                Whether you need a full-stack platform, an AI automation workflow, a cross-platform Flutter app, or
+                enterprise infrastructure support—I’m ready to engineer your solution.
+              </p>
+
+              <!-- Direct Channel Cards -->
+              <div class="theatrical-channels-list">
+
+                <!-- Email -->
+                <div class="channel-card-item">
+                  <div class="channel-icon-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                      <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                  </div>
+                  <div class="channel-info">
+                    <span class="channel-lbl">Direct Email</span>
+                    <a href="mailto:a.shakoor9744@gmail.com" class="channel-val">a.shakoor9744@gmail.com</a>
+                  </div>
+                  <button class="channel-copy-button copy-btn" data-copy="a.shakoor9744@gmail.com"
+                    aria-label="Copy Email Address">
+                    <span>Copy</span>
+                  </button>
+                </div>
+
+                <!-- Phone / WhatsApp -->
+                <div class="channel-card-item">
+                  <div class="channel-icon-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                  </div>
+                  <div class="channel-info">
+                    <span class="channel-lbl">Phone / WhatsApp</span>
+                    <a href="tel:+923229164283" class="channel-val">+92-322-9164283</a>
+                  </div>
+                  <button class="channel-copy-button copy-btn" data-copy="+923229164283" aria-label="Copy Phone Number">
+                    <span>Copy</span>
+                  </button>
+                </div>
+
+                <!-- Verified External Link Buttons -->
+                <div class="external-links-row">
+                  <a href="https://github.com/abdulshakoor6437" target="_blank" rel="noopener noreferrer"
+                    class="social-link-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                    </svg>
+                    <span>github.com/abdulshakoor6437 ↗</span>
+                  </a>
+                  <a href="https://fiverr.com/abdulshakoor733" target="_blank" rel="noopener noreferrer"
+                    class="social-link-btn fiverr-card-btn">
+                    <span class="fiverr-mark">fi</span>
+                    <span>fiverr.com/abdulshakoor733 ↗</span>
+                  </a>
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- Right Column: Browser-Window Styled Contact Form -->
+            <div class="contact-form-col">
+              <div class="browser-form-card">
+
+                <div class="browser-window-header">
+                  <div class="browser-dots" aria-hidden="true">
+                    <span class="b-dot coral"></span>
+                    <span class="b-dot peach"></span>
+                    <span class="b-dot mint"></span>
+                  </div>
+                  <div class="browser-address-bar">
+                    <span class="address-lock">🔒</span>
+                    <span class="address-url">inquiry.shakoor.dev/send</span>
+                  </div>
+                </div>
+
+                <form class="browser-form-body" id="contactForm">
+                  <h3 class="form-title">Send a Direct Inquiry</h3>
+                  <p class="form-subtext">Directly dispatches to my inbox with rapid response turnaround.</p>
+
+                  <div class="form-group">
+                    <label for="formName" class="form-label">Your Name <span class="req">*</span></label>
+                    <input type="text" id="formName" name="name" class="form-input" placeholder="e.g. Alex Morgan"
+                      required>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="formEmail" class="form-label">Your Email <span class="req">*</span></label>
+                    <input type="email" id="formEmail" name="email" class="form-input"
+                      placeholder="e.g. alex@company.com" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="formProject" class="form-label">Project Domain</label>
+                    <div class="select-box">
+                      <select id="formProject" name="projectType" class="form-select">
+                        <option value="Full-Stack Web Application">Full-Stack Web Platform (MERN / Next.js)</option>
+                        <option value="AI Automation & Agentic Engine">AI Automation &amp; Agentic System (OpenAI /
+                          LangChain)</option>
+                        <option value="Cross-Platform Flutter App">Cross-Platform Mobile App (Flutter &amp; Firebase)
+                        </option>
+                        <option value="Enterprise IT Infrastructure Support">IT Infrastructure &amp; Technical Support
+                        </option>
+                        <option value="Other Consulting Inquiry">Other Consulting Inquiry</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="formMessage" class="form-label">Project Scope &amp; Details <span
+                        class="req">*</span></label>
+                    <textarea id="formMessage" name="message" class="form-textarea" rows="4"
+                      placeholder="Share your timeline, key features, or questions..." required></textarea>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary btn-lg form-submit-btn" id="submitBtn">
+                    <span>Send Message</span>
+                    <span class="btn-arrow-bounce">→</span>
+                  </button>
+
+                  <div class="form-status" id="formStatus" role="alert" aria-hidden="true"></div>
+                </form>
+
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Original Column / Portal / API Illustration Decor at Bottom of Form -->
+          <div class="theatrical-portal-decor" aria-hidden="true">
+            <svg width="100%" height="36" viewBox="0 0 600 36" fill="none" preserveAspectRatio="none">
+              <path d="M0 18C150 36 450 0 600 18" stroke="#B8A7EA" stroke-width="2" stroke-dasharray="6 6" />
+              <circle cx="300" cy="18" r="6" fill="#FF553E" />
+              <circle cx="150" cy="27" r="4" fill="#4ECCA3" />
+              <circle cx="450" cy="9" r="4" fill="#FFD166" />
+            </svg>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SITE FOOTER (ON DEEP PURPLE GRID) -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+
+      <div class="footer-left">
+        <a href="#hero" class="footer-brand-badge">
+          <span class="brand-monogram-text">AS</span>
+        </a>
+        <div class="footer-meta">
+          <span class="footer-name">Abdul Shakoor</span>
+          <p class="footer-tagline">Full-Stack Web Platforms, AI Automation &amp; Cross-Platform Mobile.</p>
+        </div>
+      </div>
+
+      <div class="footer-right">
+        <div class="footer-nav-links">
+          <a href="#projects">Work</a>
+          <a href="#services">Services</a>
+          <a href="#process">Process</a>
+          <a href="#studio">Studio</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-bottom-info">
+          <p class="footer-copyright">© <span id="currentYear">2026</span> Abdul Shakoor. Built with clean HTML, CSS
+            &amp; JS.</p>
+          <a href="#hero" class="back-to-top-btn">Back to top ↑</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- CASE STUDY DETAIL ARCHITECTURAL MODAL (BROWSER WINDOW STYLING) -->
+  <div class="modal-overlay" id="projectModal" aria-hidden="true" role="dialog" aria-modal="true"
+    aria-labelledby="modalTitle">
+    <div class="modal-dialog">
+      <div class="browser-window-header">
+        <div class="browser-dots" aria-hidden="true">
+          <span class="b-dot coral"></span>
+          <span class="b-dot peach"></span>
+          <span class="b-dot mint"></span>
+        </div>
+        <div class="browser-address-bar">
+          <span class="address-lock">🔒</span>
+          <span class="address-url" id="modalBadge">Case Study Architecture</span>
+        </div>
+        <button class="modal-close-button" id="modalCloseBtn" aria-label="Close Case Study Details">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-content-area">
+        <h3 class="modal-heading" id="modalTitle">Project Title</h3>
+        <div class="modal-scroll-body" id="modalBody">
+          <!-- Injected dynamically via app.js -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING TOAST NOTIFICATION -->
+  <div class="toast-popup" id="toastNotification" role="status" aria-live="polite" aria-hidden="true">
+    <span class="toast-check">✓</span>
+    <span class="toast-text" id="toastMessage">Copied to clipboard!</span>
+  </div>
+
+  <!-- FLOATING WHATSAPP CHAT BUTTON -->
+  <a
+    href="https://wa.me/923175198445"
+    class="whatsapp-float"
+    id="whatsappFloat"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat with Abdul Shakoor on WhatsApp"
+    title="Chat on WhatsApp"
+  >
+    <svg class="whatsapp-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <circle cx="16" cy="16" r="16" fill="#25D366"/>
+      <path d="M23.5 8.5C21.6 6.6 19.1 5.5 16.5 5.5C11 5.5 6.5 10 6.5 15.5C6.5 17.3 7 19 7.9 20.5L6.5 26.5L12.6 25.1C14.1 25.9 15.8 26.4 17.5 26.4H17.6C23.1 26.4 27.5 21.9 27.5 16.4C27.5 13.8 26.4 11.4 24.5 9.5L23.5 8.5ZM16.5 24.5C15 24.5 13.5 24.1 12.2 23.3L11.9 23.1L8.9 23.9L9.7 21L9.5 20.7C8.6 19.3 8.1 17.7 8.1 16C8.1 11.4 12 7.6 16.6 7.6C18.8 7.6 20.9 8.5 22.4 10C23.9 11.5 24.8 13.5 24.8 15.7C24.9 20.4 21 24.5 16.5 24.5ZM21 18.1C20.7 17.9 19.4 17.3 19.1 17.2C18.8 17.1 18.6 17 18.4 17.3C18.2 17.6 17.7 18.2 17.6 18.4C17.4 18.6 17.3 18.6 17 18.5C16.7 18.4 15.7 18.1 14.5 17C13.6 16.2 13 15.2 12.9 14.9C12.7 14.6 12.9 14.5 13 14.3C13.2 14.2 13.3 14 13.5 13.9C13.6 13.7 13.7 13.6 13.8 13.4C13.9 13.2 13.8 13 13.7 12.9C13.6 12.7 13.1 11.5 12.9 11C12.7 10.5 12.4 10.5 12.2 10.5H11.7C11.5 10.5 11.2 10.6 10.9 10.9C10.6 11.2 9.9 11.9 9.9 13.1C9.9 14.3 10.9 15.5 11 15.6C11.1 15.8 13.1 18.9 16.1 20C16.8 20.3 17.4 20.5 17.9 20.6C18.6 20.8 19.2 20.8 19.7 20.7C20.3 20.6 21.3 20.1 21.5 19.4C21.8 18.8 21.8 18.3 21.7 18.2C21.6 18.1 21.3 18.2 21 18.1Z" fill="white"/>
+    </svg>
+    <span class="whatsapp-tooltip" aria-hidden="true">Chat on WhatsApp</span>
+  </a>
+
+  <!-- JavaScript -->
+  <script src="app.js"></script>
+</body>
+
+</html>
