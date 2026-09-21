@@ -134,52 +134,74 @@ function initStatsCounter() {
   const statAccessibility = document.getElementById('statAccessibility');
   const statProjects = document.getElementById('statProjects');
 
-  let animated = false;
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  let activeAnimYears = null;
+  let activeAnimAccessibility = null;
+  let activeAnimProjects = null;
+
+  function stopAllAnimations() {
+    if (activeAnimYears && activeAnimYears.id) cancelAnimationFrame(activeAnimYears.id);
+    if (activeAnimAccessibility && activeAnimAccessibility.id) cancelAnimationFrame(activeAnimAccessibility.id);
+    if (activeAnimProjects && activeAnimProjects.id) cancelAnimationFrame(activeAnimProjects.id);
+  }
+
+  function resetCounters() {
+    if (statYears) statYears.textContent = '0';
+    if (statAccessibility) statAccessibility.textContent = '0';
+    if (statProjects) statProjects.textContent = '0';
+  }
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting && !animated) {
-        animated = true;
+      stopAllAnimations();
+      if (entry.isIntersecting) {
         if (prefersReducedMotion) {
           if (statYears) statYears.textContent = '2';
           if (statAccessibility) statAccessibility.textContent = '35';
           if (statProjects) statProjects.textContent = '6';
         } else {
-          animateNumber(statYears, 0, 2, 1100);
-          animateNumber(statAccessibility, 0, 35, 1400);
-          animateNumber(statProjects, 0, 6, 1200);
+          resetCounters();
+          // Trigger smooth count-up animation every time section enters view
+          activeAnimYears = animateNumber(statYears, 0, 2, 1200);
+          activeAnimAccessibility = animateNumber(statAccessibility, 0, 35, 1500);
+          activeAnimProjects = animateNumber(statProjects, 0, 6, 1300);
         }
-        observer.unobserve(statsSection);
+      } else {
+        // Reset counters when out of view so next visit re-animates
+        resetCounters();
       }
     });
-  }, { threshold: 0.25 });
+  }, { threshold: 0.2 });
 
   observer.observe(statsSection);
 }
 
 function animateNumber(element, start, end, duration) {
-  if (!element) return;
+  const animHandle = { id: null };
+  if (!element) return animHandle;
+
   const startTime = performance.now();
 
   function update(currentTime) {
     const elapsed = currentTime - startTime;
     const progress = Math.min(elapsed / duration, 1);
     
-    // Ease out cubic
+    // Ease out cubic formula for smooth decelerating count motion
     const easeOut = 1 - Math.pow(1 - progress, 3);
     const current = Math.floor(start + (end - start) * easeOut);
     
     element.textContent = current;
 
     if (progress < 1) {
-      requestAnimationFrame(update);
+      animHandle.id = requestAnimationFrame(update);
     } else {
       element.textContent = end;
     }
   }
 
-  requestAnimationFrame(update);
+  animHandle.id = requestAnimationFrame(update);
+  return animHandle;
 }
 
 /* ==========================================================================
