@@ -51,9 +51,9 @@ The portfolio utilizes a **Neo-Editorial Deep Purple & Scalloped Cloud Design Sy
 
 ### 3. Typography Stack
 
-- **Display & Headings**: `'Syne'`, sans-serif (Weights: 700, 800) — Expressive display font used for major section titles and hero headlines.
-- **Body Text**: `'Plus Jakarta Sans'`, sans-serif (Weights: 400, 500, 600, 700, 800) — Modern, clean sans-serif for readable copy and card descriptions.
-- **Monospace & Code**: `'JetBrains Mono'`, monospace (Weights: 500, 600, 700) — Used for code snippets, API endpoints, address bars, and technical metrics.
+- **Display & Headings**: `'Geist'`, sans-serif (Weights: 100-900) — Modern, ultra-clean typeface used for major section titles and hero headlines.
+- **Body Text**: `'Geist'`, sans-serif (Weights: 100-900) — Modern, clean sans-serif for readable copy and card descriptions across the entire site.
+- **Monospace & Code**: `'Geist Mono'`, monospace (Weights: 100-900) — Used for code snippets, API endpoints, address bars, and technical metrics.
 
 ---
 

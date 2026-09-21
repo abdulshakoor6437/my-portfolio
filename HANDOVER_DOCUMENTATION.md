@@ -109,9 +109,9 @@ The website implements a **Neo-Editorial Deep Purple & Scalloped Cloud Theme**.
 ```
 
 ### 3.2 Typography Stack
-- **Display / Headings**: `'Syne'`, sans-serif (Weights: 700, 800) — Bold, geometric display font for major headers and section titles.
-- **Body & Subtitles**: `'Plus Jakarta Sans'`, sans-serif (Weights: 400, 500, 600, 700, 800) — Clean, legible UI font for copy and descriptions.
-- **Code & Technical**: `'JetBrains Mono'`, monospace (Weights: 500, 600, 700) — Used in code blocks, browser address bars, API endpoints, and metrics.
+- **Display / Headings**: `'Geist'`, sans-serif (Weights: 100-900) — Modern, clean display font for major headers and section titles.
+- **Body & Subtitles**: `'Geist'`, sans-serif (Weights: 100-900) — Clean, legible UI font for copy and descriptions across the entire site.
+- **Code & Technical**: `'Geist Mono'`, monospace (Weights: 100-900) — Used in code blocks, browser address bars, API endpoints, and metrics.
 
 ### 3.3 Visual & Signature Effects
 - **Scalloped Cloud Dividers**: Custom SVG scalloped clip-paths and SVG background masks dividing dark and light canvas sections.
