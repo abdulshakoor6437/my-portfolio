@@ -14,7 +14,7 @@ const PROJECTS_DATA = [
       "web"
     ],
     "categoryBadge": "Autonomous AI & Web",
-    "addressBar": "job-assistant.internal/matcher-pipeline",
+    "addressBar": "job-assistant / matcher-pipeline",
     "shortDescription": "A multi-user job-hunting assistant that parses your CV, finds and ranks real job listings, tailors your CV per job, and autofills applications, while the user always submits manually.",
     "tags": [
       "TypeScript",
@@ -71,7 +71,7 @@ const PROJECTS_DATA = [
       "web"
     ],
     "categoryBadge": "ENTERPRISE",
-    "addressBar": "ptb-internal.gov/compliance-rbac",
+    "addressBar": "ptb-compliance / rbac",
     "shortDescription": "A regulatory compliance portal built for strict administrative governance, featuring multi-tier role-based access control (RBAC), immutable audit logging, and automated quota validation for multi-stakeholder operations.",
     "tags": [
       "React.js",
@@ -118,7 +118,7 @@ const PROJECTS_DATA = [
       "mobile"
     ],
     "categoryBadge": "MOBILE & ESCROW",
-    "addressBar": "zimma-escrow.app/secp-tracker",
+    "addressBar": "zimma-escrow / milestone-tracker",
     "shortDescription": "Pakistan's first SECP-registered escrow application. A cross-platform task coordination and milestone management platform engineered with background push alerts, offline SQLite/Hive caching, and secure Cloud Firestore sync.",
     "tags": [
       "Flutter",
@@ -167,7 +167,7 @@ const PROJECTS_DATA = [
       "web"
     ],
     "categoryBadge": "Conversational AI & Memory",
-    "addressBar": "ai-assistant.internal/streaming-memory",
+    "addressBar": "ai-assistant / streaming-pipeline",
     "shortDescription": "A full-featured conversational AI platform powered by Anthropic Claude and FastAPI, featuring long-term memory extraction, streaming SSE responses, and user session management.",
     "tags": [
       "FastAPI",
@@ -219,7 +219,7 @@ const PROJECTS_DATA = [
       "ai"
     ],
     "categoryBadge": "Generative AI & Vector Search",
-    "addressBar": "documind.rag.ai/chroma-retriever",
+    "addressBar": "documind-rag / chroma-retriever",
     "shortDescription": "A real-time Retrieval-Augmented Generation (RAG) assistant for PDFs that vectorizes chunks into ChromaDB and streams grounded answers with page-level source citations.",
     "tags": [
       "Python",
@@ -271,7 +271,7 @@ const PROJECTS_DATA = [
       "ai"
     ],
     "categoryBadge": "Full-Stack Web & Automation",
-    "addressBar": "university-schedule.edu/timetable-dispatch",
+    "addressBar": "university-schedule / timetable-matrix",
     "shortDescription": "A full-stack university timetable scheduling platform and automated WhatsApp notification system featuring clash detection, room re-routing, and a jittered queue for reliable message dispatch.",
     "tags": [
       "Node.js / Express",
@@ -325,7 +325,7 @@ const PROJECTS_DATA = [
       "web"
     ],
     "categoryBadge": "AGENTIC AI",
-    "addressBar": "agent.scheduler.ai/pipeline-exec",
+    "addressBar": "agent-scheduler / pipeline-exec",
     "shortDescription": "Autonomous agentic assistant that parses natural language requests into conflict-resolved, time-blocked calendar entries with multi-constraint validation and timezone normalization.",
     "tags": [
       "Next.js",
@@ -373,7 +373,7 @@ const PROJECTS_DATA = [
       "ai"
     ],
     "categoryBadge": "AI Automation & Webhooks",
-    "addressBar": "classroom-agent.bot/webhook-dispatch",
+    "addressBar": "classroom-agent / homework-dispatch",
     "shortDescription": "An autonomous workflow agent that monitors Google Classroom for pending coursework, solves assignments via Gemini API, generates formatted Word documents, and delivers them via WhatsApp.",
     "tags": [
       "Python",
@@ -422,7 +422,7 @@ const PROJECTS_DATA = [
       "web"
     ],
     "categoryBadge": "Next.js & Admin Operations",
-    "addressBar": "electrofix.service.app/booking-portal",
+    "addressBar": "electrofix / booking-portal",
     "shortDescription": "A modern full-stack web application for certified electrical contractor services, featuring online booking, complaint management, customer reviews, and a secure admin dashboard.",
     "tags": [
       "Next.js 14",
@@ -471,7 +471,7 @@ const PROJECTS_DATA = [
       "web"
     ],
     "categoryBadge": "Enterprise Web & Law Enforcement",
-    "addressBar": "police-records.gov/case-ledger",
+    "addressBar": "crime-records / case-ledger",
     "shortDescription": "A full-stack law enforcement management system for police departments to log FIRs, track criminal profiles, coordinate officer rosters, and monitor judicial case lifecycles.",
     "tags": [
       "React 19",
@@ -523,7 +523,7 @@ const PROJECTS_DATA = [
       "web"
     ],
     "categoryBadge": "Full-Stack Web & Productivity",
-    "addressBar": "applywise.app/kanban-pipeline",
+    "addressBar": "applywise / pipeline-tracker",
     "shortDescription": "A visual job application pipeline tracker built with PHP and Laravel that transforms job searches into an organized Kanban board from Applied to Offer.",
     "tags": [
       "PHP",
@@ -574,7 +574,7 @@ const PROJECTS_DATA = [
       "web"
     ],
     "categoryBadge": "Machine Learning & NLP Dashboard",
-    "addressBar": "veritas.ai/spam-classifier",
+    "addressBar": "veritas-ai / spam-classifier",
     "shortDescription": "An NLP machine learning web platform achieving 97.12% accuracy with a Multinomial Naive Bayes classifier, Flask REST API, and interactive preprocessing breakdown dashboard.",
     "tags": [
       "Python",
@@ -602,7 +602,7 @@ const PROJECTS_DATA = [
     ],
     "designPrinciples": [
       "Explainable machine learning with visible token-weight contributions",
-      "Sub-15ms inference latency via serialized Pickle pipelines",
+      "Low-latency inference via serialized Pickle pipelines",
       "High precision on spam to avoid false positives on legitimate messages",
       "Intuitive interactive visualization of multi-step NLP transformations"
     ],
@@ -627,7 +627,7 @@ const PROJECTS_DATA = [
       "web"
     ],
     "categoryBadge": "Machine Learning & Data Science",
-    "addressBar": "regressiq.studio/dual-pipelines",
+    "addressBar": "regressiq / dual-pipelines",
     "shortDescription": "An enterprise machine learning web application featuring dual linear regression pipelines for healthcare insurance charge estimation and California housing valuation.",
     "tags": [
       "Python",
@@ -689,7 +689,7 @@ function getCanvasMockupHtml(project) {
               <span class="m-step-num">01</span>
               <div class="m-step-text">
                 <strong>Source CV Extraction</strong>
-                <span>Strict Fact Parser (No Hallucinations)</span>
+                <span>Fact Parser, Validated Against Source CV</span>
               </div>
             </div>
             <div class="m-job-arrow">➔</div>
@@ -697,7 +697,7 @@ function getCanvasMockupHtml(project) {
               <span class="m-step-num">02</span>
               <div class="m-step-text">
                 <strong>Semantic Embeddings</strong>
-                <span>Cosine Similarity Ranking (98.4%)</span>
+                <span>Cosine Similarity Ranking</span>
               </div>
             </div>
           </div>
@@ -801,7 +801,7 @@ function getCanvasMockupHtml(project) {
               <span class="m-status-pill green">Top-K Similarity</span>
             </div>
             <div class="m-table-rows">
-              <div class="m-row"><span class="m-tag admin">PAGE 14</span> "Revenue up 34.8% YoY" • Grounded</div>
+              <div class="m-row"><span class="m-tag admin">SOURCE CITATION</span> Page-Level Context Grounded</div>
               <div class="m-row"><span class="m-tag inspector">CHUNK 03</span> Sentence-Aware Window Bound</div>
               <div class="m-row"><span class="m-tag auditor">CITATION</span> Zero-Hallucination Verified</div>
             </div>
@@ -819,7 +819,7 @@ function getCanvasMockupHtml(project) {
           </div>
           <div class="v-szabist-box">
             <span class="v-box-head">WHATSAPP DISPATCH</span>
-            <div class="v-alert-pill green"><svg class="mini-chk-svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#36B38C" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> 142 Faculty Alerts Sent</div>
+            <div class="v-alert-pill green"><svg class="mini-chk-svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#36B38C" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Faculty Alerts Dispatched</div>
             <div class="v-alert-pill amber"><svg class="mini-chk-svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Room Clash Re-routed</div>
           </div>
         </div>
@@ -885,7 +885,7 @@ function getCanvasMockupHtml(project) {
             <div class="m-table-rows">
               <div class="m-row"><span class="m-tag admin">URGENT</span> Commercial Power Grid Audit</div>
               <div class="m-row"><span class="m-tag inspector">COMPLETED</span> Wiring &amp; Circuit Breaker Fix</div>
-              <div class="m-row"><span class="m-tag auditor">REVIEW</span> ★★★★★ 5.0 (Client Testimonial)</div>
+              <div class="m-row"><span class="m-tag auditor">REVIEW</span> ★★★★★ Verified Client Review</div>
             </div>
           </div>
         </div>
@@ -906,7 +906,7 @@ function getCanvasMockupHtml(project) {
               <span class="m-status-pill green">MySQL / SQLite</span>
             </div>
             <div class="m-table-rows">
-              <div class="m-row"><span class="m-tag admin">FIR #2026-084</span> Case Under Investigation</div>
+              <div class="m-row"><span class="m-tag admin">FIR: Investigation Log</span> Case Under Investigation</div>
               <div class="m-row"><span class="m-tag inspector">OFFICER</span> Insp. Tariq • Sector West Assigned</div>
               <div class="m-row"><span class="m-tag auditor">COURT</span> Hearing Scheduled • Verdict Pending</div>
             </div>
