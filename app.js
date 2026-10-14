@@ -10,12 +10,23 @@
  * 5. Project Category Filtering & Browser Modals
  * 6. One-Click Clipboard Copy with Floating Toast
  * 7. Contact Form Handler & Pre-Filled Mailto Dispatch
- * 8. Service Inquiry Auto-Selector
- * 9. Responsive Mobile Navigation Drawer
- * 10. Current Year Dynamic Update
+ * 8. Service Inquiry Auto-Select in Contact Form
+ * 9. Mobile Navigation Drawer Toggle
+ * 10. Copyright Year Auto-Sync
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // If browser-projects-grid is empty or needs dynamic render
+  const gridContainer = document.querySelector('.browser-projects-grid');
+  if (gridContainer && gridContainer.querySelectorAll('.browser-project-card').length === 0) {
+    if (typeof renderProjectsToGrid === 'function') {
+      renderProjectsToGrid();
+    }
+  }
+
+  // Calculate and update pill counts dynamically at load time from PROJECTS_DATA
+  updateFilterCounts();
+
   initScrollReveal();
   initParallaxDoodles();
   initCapabilitySandbox();
@@ -42,29 +53,29 @@ function initScrollReveal() {
     return;
   }
 
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -60px 0px',
+    threshold: 0.12
+  };
+
   const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach((entry, idx) => {
+    entries.forEach(entry => {
       if (entry.isIntersecting) {
-        // Staggered reveal effect
-        setTimeout(() => {
-          entry.target.classList.add('in-view');
-        }, idx * 60);
+        entry.target.classList.add('in-view');
         obs.unobserve(entry.target);
       }
     });
-  }, {
-    threshold: 0.12,
-    rootMargin: '0px 0px -40px 0px'
-  });
+  }, observerOptions);
 
   revealElements.forEach(el => observer.observe(el));
 }
 
 /* ==========================================================================
-   2. SUBTLE SCROLL PARALLAX FOR FLOATING DOODLES
+   2. SUBTLE PARALLAX FOR DECORATIVE DOODLES
    ========================================================================== */
 function initParallaxDoodles() {
-  const parallaxItems = document.querySelectorAll('.parallax-item');
+  const parallaxItems = document.querySelectorAll('.parallax-doodle');
   if (!parallaxItems.length) return;
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -75,9 +86,9 @@ function initParallaxDoodles() {
   window.addEventListener('scroll', () => {
     if (!ticking) {
       window.requestAnimationFrame(() => {
-        const scrollY = window.pageYOffset;
+        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
         parallaxItems.forEach(item => {
-          const speed = parseFloat(item.getAttribute('data-speed') || '0.08');
+          const speed = parseFloat(item.getAttribute('data-speed')) || 0.05;
           const yPos = -(scrollY * speed);
           item.style.transform = `translate3d(0, ${yPos}px, 0)`;
         });
@@ -162,13 +173,11 @@ function initStatsCounter() {
           if (statProjects) statProjects.textContent = '6';
         } else {
           resetCounters();
-          // Trigger smooth count-up animation every time section enters view
           activeAnimYears = animateNumber(statYears, 0, 2, 1200);
           activeAnimAccessibility = animateNumber(statAccessibility, 0, 35, 1500);
           activeAnimProjects = animateNumber(statProjects, 0, 6, 1300);
         }
       } else {
-        // Reset counters when out of view so next visit re-animates
         resetCounters();
       }
     });
@@ -187,7 +196,6 @@ function animateNumber(element, start, end, duration) {
     const elapsed = currentTime - startTime;
     const progress = Math.min(elapsed / duration, 1);
     
-    // Ease out cubic formula for smooth decelerating count motion
     const easeOut = 1 - Math.pow(1 - progress, 3);
     const current = Math.floor(start + (end - start) * easeOut);
     
@@ -209,9 +217,9 @@ function animateNumber(element, start, end, duration) {
    ========================================================================== */
 function initProjectFilters() {
   const filterBtns = document.querySelectorAll('.filter-pill-btn');
-  const projectCards = document.querySelectorAll('.browser-project-card');
+  const emptyState = document.getElementById('projectsEmptyState');
 
-  if (!filterBtns.length || !projectCards.length) return;
+  if (!filterBtns.length) return;
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -223,71 +231,61 @@ function initProjectFilters() {
       btn.setAttribute('aria-selected', 'true');
 
       const filter = btn.getAttribute('data-filter');
+      let visibleCount = 0;
 
+      const projectCards = document.querySelectorAll('.browser-project-card');
       projectCards.forEach(card => {
-        const category = card.getAttribute('data-category');
-        if (filter === 'all' || category === filter) {
+        const categories = (card.getAttribute('data-category') || '').split(/\s+/);
+        const isFeatured = card.getAttribute('data-featured') === 'true';
+
+        let isMatch = false;
+        if (filter === 'all') {
+          isMatch = true;
+        } else if (filter === 'featured') {
+          isMatch = isFeatured;
+        } else if (categories.includes(filter)) {
+          isMatch = true;
+        }
+
+        if (isMatch) {
           card.classList.remove('hidden');
+          visibleCount++;
         } else {
           card.classList.add('hidden');
         }
       });
+
+      if (emptyState) {
+        emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+      }
     });
   });
 }
 
-const PROJECT_DETAILS = {
-  ptb: {
-    badge: 'Enterprise Compliance & Audit System',
-    title: 'PTB Tobacco Management System',
-    desc: 'An enterprise-grade administrative compliance portal built to enforce regulatory quota tracking, license verification, and multi-tier role governance with zero tamper risk.',
-    architecture: [
-      'Multi-tier role-based access control (Super Admin, Inspector T2, Auditor, Licensee) using cryptographic JWT payloads.',
-      'Immutable audit logging capturing user ID, timestamp, IP address, and state delta on every record mutation.',
-      'Express.js middleware layer validating token signatures and role entitlements prior to reaching controller handlers.',
-      'Optimized MongoDB aggregate pipelines delivering fast regulatory compliance summaries across 10,000+ quota allocations.'
-    ],
-    stack: ['React.js', 'Node.js / Express', 'MongoDB', 'JWT Authentication', 'REST APIs', 'Role-Based Access Control (RBAC)']
-  },
-  zimma: {
-    badge: 'Pakistan’s 1st SECP-Registered Escrow App',
-    title: 'Zimma Solution Mobile App',
-    desc: 'Cross-platform task coordination and milestone management platform engineered with background push notifications and secure offline storage for SECP-compliant financial escrow security.',
-    architecture: [
-      'Flutter single-codebase architecture delivering high frame-rate cross-platform interfaces across iOS and Android.',
-      'Firebase Auth multi-provider integration safeguarding client and contractor accounts.',
-      'Cloud Firestore real-time listener trees synchronizing task milestones, payment verifications, and escrow states.',
-      'Firebase Cloud Messaging (FCM) background push notifications keeping all parties updated on escrow lock and release cycles.',
-      'Local SQLite/Hive cache layer ensuring seamless offline task coordination with automatic synchronization on network reconnect.'
-    ],
-    stack: ['Flutter', 'Firebase Auth', 'Cloud Firestore', 'Firebase Cloud Messaging (FCM)', 'SECP Escrow Engine', 'Offline Cache']
-  },
-  'schedule-ai': {
-    badge: 'Generative AI & Agentic Workflow',
-    title: 'Intelligent Schedule Management Engine',
-    desc: 'Autonomous agentic assistant that parses unstructured conversational natural language into conflict-resolved, time-blocked calendar entries with multi-constraint validation.',
-    architecture: [
-      'Next.js full-stack framework with React Server Components and fast serverless API endpoints.',
-      'OpenAI API integration for semantic entity recognition, temporal expression parsing, and priority classification.',
-      'LangChain orchestration with prompt validation chains, JSON schema enforcement, and deterministic fallback handling.',
-      'Deterministic conflict-resolution engine that maps existing busy times and identifies optimal non-overlapping slots.',
-      'Automated calendar event creation with custom notification triggers.'
-    ],
-    stack: ['Next.js', 'OpenAI API', 'LangChain', 'Prompt Engineering', 'Conflict Resolution Algorithms', 'TypeScript/JavaScript']
-  },
-  szabist: {
-    badge: 'University Administrative Platform',
-    title: 'SZABIST Admin v1.0 (Schedule System)',
-    desc: 'Departmental scheduling system engineered for university faculty, managing lecture timetables, room allocation logic, and automated WhatsApp notification dispatches.',
-    architecture: [
-      'Node.js & Express RESTful API managing faculty courses, classroom capacity constraints, and time slot reservations.',
-      'WhatsApp Business API webhook integration broadcasting immediate timetable modifications and emergency schedule alerts.',
-      'MongoDB schemas with indexed query paths for instantaneous clash detection across simultaneous department rooms.',
-      'Clean administrative dashboard facilitating multi-instructor roster imports and single-click broadcast triggers.'
-    ],
-    stack: ['Node.js / Express', 'MongoDB', 'WhatsApp Business API', 'Webhook Dispatch Queue', 'Clash Detection', 'Roster Management']
-  }
-};
+/**
+ * Dynamically computes filter counts from PROJECTS_DATA at load time.
+ */
+function updateFilterCounts() {
+  if (typeof PROJECTS_DATA === 'undefined' || !Array.isArray(PROJECTS_DATA)) return;
+
+  const totalCount = PROJECTS_DATA.length;
+  const webCount = PROJECTS_DATA.filter(p => p.category && p.category.includes('web')).length;
+  const aiCount = PROJECTS_DATA.filter(p => p.category && p.category.includes('ai')).length;
+  const mobileCount = PROJECTS_DATA.filter(p => p.category && p.category.includes('mobile')).length;
+  const featuredCount = PROJECTS_DATA.filter(p => p.featured).length;
+
+  const countAll = document.getElementById('filterCountAll');
+  const countWeb = document.getElementById('filterCountWeb');
+  const countAi = document.getElementById('filterCountAi');
+  const countMobile = document.getElementById('filterCountMobile');
+  const countFeatured = document.getElementById('filterCountFeatured');
+
+  if (countAll) countAll.textContent = totalCount;
+  if (countWeb) countWeb.textContent = webCount;
+  if (countAi) countAi.textContent = aiCount;
+  if (countMobile) countMobile.textContent = mobileCount;
+  if (countFeatured) countFeatured.textContent = featuredCount;
+}
 
 function initProjectModals() {
   const modal = document.getElementById('projectModal');
@@ -295,32 +293,79 @@ function initProjectModals() {
   const modalBadge = document.getElementById('modalBadge');
   const modalTitle = document.getElementById('modalTitle');
   const modalBody = document.getElementById('modalBody');
-  const openButtons = document.querySelectorAll('.open-modal-btn');
 
   if (!modal) return;
 
   let lastFocusedElement = null;
 
   function openModal(projectId) {
-    const data = PROJECT_DETAILS[projectId];
-    if (!data) return;
+    const data = (typeof PROJECTS_DATA !== 'undefined' && Array.isArray(PROJECTS_DATA))
+      ? PROJECTS_DATA.find(p => p.id === projectId)
+      : null;
+
+    if (!data) {
+      console.warn('Project data not found for id:', projectId);
+      return;
+    }
 
     lastFocusedElement = document.activeElement;
 
-    modalBadge.textContent = data.badge;
-    modalTitle.textContent = data.title;
+    if (modalBadge) modalBadge.textContent = data.modalBadge || data.categoryBadge || 'Architecture Deep-Dive';
+    if (modalTitle) modalTitle.textContent = data.modalTitle || data.title;
 
-    const listHtml = data.architecture.map(item => `<li>${escapeHtml(item)}</li>`).join('');
-    const tagsHtml = data.stack.map(tag => `<span class="p-tech-pill">${escapeHtml(tag)}</span>`).join('');
+    const listHtml = (data.architecture || []).map(item => `<li>${escapeHtml(item)}</li>`).join('');
+    const tagsHtml = (data.stack || data.tags || []).map(tag => `<span class="p-tech-pill">${escapeHtml(tag)}</span>`).join('');
+
+    let principlesHtml = '';
+    if (data.designPrinciples && data.designPrinciples.length) {
+      principlesHtml = `
+        <div class="modal-section-title">Core Design &amp; Architecture Principles</div>
+        <ul class="modal-principles-list">
+          ${data.designPrinciples.map(dp => `<li><span class="principle-check">✓</span> <span>${escapeHtml(dp)}</span></li>`).join('')}
+        </ul>
+      `;
+    }
+
+    let linksHtml = '';
+    if (data.isPrivate || !data.githubUrl) {
+      linksHtml += `
+        <span class="btn-private" title="Private project repository (Verified Build)">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <span>Private Repository</span>
+        </span>
+      `;
+    } else {
+      linksHtml += `
+        <a href="${escapeHtml(data.githubUrl)}" target="_blank" rel="noopener noreferrer" class="btn-github" title="View Source on GitHub">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          <span>View on GitHub</span>
+        </a>
+      `;
+    }
+
+    if (data.demoUrl) {
+      linksHtml += `
+        <a href="${escapeHtml(data.demoUrl)}" target="_blank" rel="noopener noreferrer" class="btn-demo" title="Open Live Demo">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          <span>Live Demo</span>
+        </a>
+      `;
+    }
+
+    const actionRowHtml = linksHtml ? `<div class="modal-action-row">${linksHtml}</div>` : '';
 
     modalBody.innerHTML = `
-      <p style="margin-bottom: 1.25rem; font-size: 1rem; color: var(--text-purple-muted);">${escapeHtml(data.desc)}</p>
+      <p style="margin-bottom: 1.25rem; font-size: 1rem; color: var(--text-purple-muted); line-height: 1.65;">${escapeHtml(data.modalDesc || data.shortDescription || data.desc || '')}</p>
       
+      ${principlesHtml}
+
       <div class="modal-section-title">Technical Architecture &amp; Engineering Highlights</div>
       <ul class="modal-list">${listHtml}</ul>
 
       <div class="modal-section-title">Production Tech Stack</div>
       <div class="modal-tags">${tagsHtml}</div>
+
+      ${actionRowHtml}
     `;
 
     modal.classList.add('open');
@@ -342,11 +387,15 @@ function initProjectModals() {
     }
   }
 
-  openButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
+  // Event delegation to catch clicks on any .open-modal-btn
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.open-modal-btn');
+    if (btn) {
       const projId = btn.getAttribute('data-project');
-      openModal(projId);
-    });
+      if (projId) {
+        openModal(projId);
+      }
+    }
   });
 
   if (modalCloseBtn) {
@@ -367,6 +416,7 @@ function initProjectModals() {
 }
 
 function escapeHtml(str) {
+  if (typeof str !== 'string') return '';
   return str.replace(/[&<>'"]/g, 
     tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
   );
@@ -432,7 +482,6 @@ function initClipboardToast() {
 /* ==========================================================================
    7. CONTACT FORM — Web3Forms API Integration with Mailto Fallback
    ========================================================================== */
-// Web3Forms Access Key (Get yours free from https://web3forms.com)
 const WEB3FORMS_ACCESS_KEY = 'cc95b092-151e-4568-b1a1-0047ae944eeb';
 
 function initContactForm() {
@@ -453,7 +502,6 @@ function initContactForm() {
                         ? form.access_key.value 
                         : WEB3FORMS_ACCESS_KEY;
 
-    // Client-side validation
     if (!name || !email || !message) {
       formStatus.className = 'form-status error';
       formStatus.textContent = 'Please fill out all required fields.';
@@ -461,7 +509,6 @@ function initContactForm() {
       return;
     }
 
-    // Disable button while sending
     submitBtn.disabled = true;
     submitBtn.querySelector('span').textContent = 'Sending…';
 
@@ -469,7 +516,6 @@ function initContactForm() {
     formStatus.textContent = '';
     formStatus.setAttribute('aria-hidden', 'true');
 
-    // Helper for Mailto Fallback
     function triggerMailtoFallback() {
       const mailtoSubject = encodeURIComponent(`Portfolio Inquiry: ${projectType} from ${name}`);
       const mailtoBody    = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nDomain: ${projectType}\n\nMessage:\n${message}`);
@@ -480,7 +526,6 @@ function initContactForm() {
       formStatus.setAttribute('aria-hidden', 'false');
     }
 
-    // If key is not configured, fall back to mailto directly
     if (!accessKey || accessKey === 'YOUR_WEB3FORMS_ACCESS_KEY') {
       triggerMailtoFallback();
       submitBtn.disabled = false;

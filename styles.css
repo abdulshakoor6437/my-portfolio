@@ -3343,3 +3343,293 @@ img, svg {
   border: 1px solid rgba(239, 68, 68, 0.3);
 }
 
+/* ==========================================================================
+   Project Card Enhancements: Action Buttons, Badges, Mockups & Empty State
+   ========================================================================== */
+.browser-cat-badge.badge-featured {
+  background-color: rgba(255, 209, 102, 0.25);
+  color: #B45309;
+  border-color: #D97706;
+}
+
+.p-action-row {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.btn-github {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background-color: var(--bg-purple-elevated);
+  color: var(--text-light);
+  border: 1.5px solid var(--accent-lavender);
+  padding: 0.45rem 0.95rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.btn-github:hover {
+  background-color: #FFFFFF;
+  color: var(--bg-purple-deep);
+  border-color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.btn-private {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background-color: rgba(255, 160, 122, 0.15);
+  color: var(--accent-peach);
+  border: 1.5px dashed var(--accent-peach);
+  padding: 0.45rem 0.95rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: default;
+}
+
+.btn-demo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background-color: var(--accent-coral);
+  color: #FFFFFF;
+  border: 1.5px solid #1F1338;
+  padding: 0.45rem 0.95rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 2px 2px 0px 0px #1F1338;
+  transition: all var(--transition-fast);
+}
+
+.btn-demo:hover {
+  background-color: var(--accent-coral-hover);
+  transform: translateY(-2px);
+}
+
+/* Empty State Message */
+.projects-empty-state {
+  text-align: center;
+  padding: 3.5rem 1.5rem;
+  background-color: var(--bg-purple-deep);
+  border: var(--border-thick);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-hard-md);
+  color: var(--text-light-lavender);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 1rem 0;
+}
+
+/* Job Assistant Mockup */
+.mockup-job-assistant {
+  width: 100%;
+  max-width: 420px;
+  background-color: var(--cloud-white);
+  border: 2px solid #1F1338;
+  border-radius: 10px;
+  box-shadow: 4px 4px 0px 0px #1F1338;
+  color: var(--text-purple-dark);
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.mockup-header-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid #E5DFD3;
+}
+
+.m-strip-tag.green { color: var(--accent-mint-hover); }
+.m-strip-tag.blue { color: #2563EB; }
+.m-strip-meta { color: var(--text-purple-muted); font-size: 0.62rem; }
+
+.mockup-job-grid {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.m-job-step {
+  flex: 1;
+  background-color: var(--cloud-offwhite);
+  border: 1.5px solid #1F1338;
+  border-radius: 6px;
+  padding: 0.45rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+}
+
+.m-job-step.active-step {
+  background-color: var(--accent-mint-subtle);
+  border-color: var(--accent-mint-hover);
+}
+
+.m-step-num {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.75rem;
+  color: var(--accent-coral);
+}
+
+.m-step-text strong {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 800;
+}
+
+.m-step-text span {
+  font-size: 0.58rem;
+  color: var(--text-purple-muted);
+}
+
+.m-job-arrow {
+  color: var(--accent-coral);
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+
+.m-job-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+  padding-top: 0.4rem;
+  border-top: 1px dashed #E5DFD3;
+  font-size: 0.62rem;
+}
+
+.m-extension-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 700;
+  color: var(--text-purple-dark);
+}
+
+.m-rule-pill {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 800;
+  background: #FFF4E5;
+  color: #C2410C;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+}
+
+/* Kanban in ApplyWise */
+.mockup-kanban-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.4rem;
+  margin: 0.2rem 0;
+}
+
+.kanban-col {
+  background: var(--cloud-offwhite);
+  border: 1px solid #1F1338;
+  border-radius: 6px;
+  padding: 0.4rem;
+}
+
+.k-title {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  font-weight: 800;
+  color: var(--text-purple-muted);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.k-card {
+  background: #FFFFFF;
+  border: 1px solid #E5DFD3;
+  border-radius: 4px;
+  padding: 0.3rem;
+  font-size: 0.6rem;
+  font-weight: 700;
+}
+
+.k-card.active {
+  border-color: var(--accent-coral);
+  background: var(--accent-coral-subtle);
+  color: var(--accent-coral);
+}
+
+.k-card.win {
+  border-color: var(--accent-mint);
+  background: var(--accent-mint-subtle);
+  color: var(--accent-mint-hover);
+}
+
+/* Modal Principles & Action Row */
+.modal-principles-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.6rem 0 1.4rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.modal-principles-list li {
+  background-color: var(--cloud-offwhite);
+  border: 1px solid #E2DBD0;
+  border-left: 3.5px solid var(--accent-coral);
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-purple-dark);
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.principle-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: var(--accent-mint);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.modal-action-row {
+  margin-top: 1.6rem;
+  padding-top: 1.2rem;
+  border-top: 1.5px solid #E5DFD3;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+
